@@ -1,3 +1,15 @@
+import Form from "./components/Form.tsx";
+
+const App = () => {
+  return (
+    <div>
+      <Form />
+    </div>
+  );
+};
+
+export default App;
+
 // import { IoCalendarNumberSharp } from "react-icons/io5";
 
 // function App() {

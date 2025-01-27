@@ -1,14 +1,38 @@
-import Form from "./components/Form.tsx";
+import { useState } from "react";
+import ExpenseList from "./expense-tracker/components/ExpenseList";
 
-const App = () => {
+function App() {
+  const [expenses, setExpenses] = useState([
+    { id: 1, description: "aaa", amount: 100, category: "Food" },
+    { id: 2, description: "bbb", amount: 100, category: "Food" },
+    { id: 3, description: "ccc", amount: 100, category: "Food" },
+    { id: 4, description: "ddd", amount: 100, category: "Food" },
+    { id: 5, description: "eee", amount: 100, category: "Food" },
+    { id: 6, description: "fff", amount: 100, category: "Food" },
+  ]);
   return (
     <div>
-      <Form />
+      <ExpenseList
+        expenses={expenses}
+        onDelete={(id) => setExpenses(expenses.filter((e) => e.id !== id))}
+      />
     </div>
   );
-};
+}
 
 export default App;
+
+// import Form from "./components/Form.tsx";
+
+// const App = () => {
+//   return (
+//     <div>
+//       <Form />
+//     </div>
+//   );
+// };
+
+// export default App;
 
 // import { IoCalendarNumberSharp } from "react-icons/io5";
 
